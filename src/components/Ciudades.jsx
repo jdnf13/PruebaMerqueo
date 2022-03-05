@@ -1133,9 +1133,7 @@ let Ciudades = [
 
 ]
 localStorage.setItem('ListaCiudadesCol',JSON.stringify(Ciudades));
-return(
-    <div></div>
-);
+return(null);
 
 }
 export default Ciudades;

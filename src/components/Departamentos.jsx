@@ -40,8 +40,6 @@ let departamentos = {
 }
 
 localStorage.setItem('ListaDepartamentos', JSON.stringify(departamentos));
-return (
-    <div></div>
-);
+return (null);
 }
 export default ciudades;

@@ -7,11 +7,10 @@ import './css/App.css';
 import LogoBanner from './images/logobanner4.png';
 import Departamentos from './components/Departamentos';
 import Ciudades from './components/Ciudades';
-import ConsumerService from './components/ConsumerService.jsx';
+
+
 function App() {
- // let productos = [];
- // localStorage.setItem('Productos',JSON.stringify(productos))
- 
+  
   return (
     <BrowserRouter key="Brows1">
     <div className= "App">
@@ -27,7 +26,6 @@ function App() {
         <nav className="navbar navbar-dark">
           <NavLink to="/Tienda" className="navbar-brand"><p className="ItemHover">Tienda</p></NavLink>
           <NavLink to="/Carro" className="navbar-brand" activeClassName="active"><p className="ItemHover">Carrito</p></NavLink>
-          <NavLink to="/Tienda" className="navbar-brand"><p className="ItemHover">Inicio</p></NavLink>
                    
         </nav>  
       </div>
@@ -39,7 +37,6 @@ function App() {
       </Switch>
       <Departamentos></Departamentos>
       <Ciudades></Ciudades>
-      <ConsumerService></ConsumerService>
     </div>    
     </BrowserRouter>
   );
