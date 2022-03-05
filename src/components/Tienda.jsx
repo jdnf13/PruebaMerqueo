@@ -94,7 +94,7 @@ const Tienda    =   ()  =>  {
     /////////////////////////////////////////////////////////////////////////////////////////////
     ///////Array que contiene la informacion de los items en venta///////////////////////////////
     ///////Se simula la data obtenida de un API REST -JsonArray- //////////////////7
-    let arrayArticulos  =   [
+  /*  let arrayArticulos  =   [
         {
             idArticulo : 10,
             nProducto:'Cafe Premium 500g',
@@ -155,28 +155,33 @@ const Tienda    =   ()  =>  {
             pProducto:4700.0,
             imgProducto:Slider10
         }
-    ];
+    ];*/
+    let products =[]
+    if(localStorage.getItem('Productos')){
+        products = JSON.parse(localStorage.getItem('Productos'));
+    }
+
+    //products = JSON.parse(localStorage.getItem('Productos'));
     /////////////////////////////////////////////////////////////////////////////////////////////
     ///Se crean los array donde se renderizaran las Card de cada articulo en el arrayArticulos///
     let CardItem    =       [];
-    let CardCompose =       [];    
-    if(arrayArticulos.length     >=  1){/**Si el arrayArticulos tiene items, lo recorremos con un for
+    let CardCompose =       []; 
+ 
+    if(products.length     >=  1){/**Si el arrayArticulos tiene items, lo recorremos con un for
          y dibujamos una tarjeta por     item, con los datos de cada item */
 
-        let item    =    0;
-        let lengtArray      =      arrayArticulos.length
 
-        for(item    =    0; item     <   lengtArray; item++){
+        for(let item    =    0; item     <   products.length; item++){
         
             CardItem    =    [
-                <div    key={arrayArticulos[item].idArticulo} className="col-lg" id={item}>
+                <div    key={products[item].idArticulo} className="col-lg" id={item}>
                     
                     <Card   
                         
-                        id          =   {arrayArticulos[item].idArticulo}
-                        nProducto   =   {arrayArticulos[item].nProducto}
-                        pProducto   =   {arrayArticulos[item].pProducto}
-                        imgProducto =   {arrayArticulos[item].imgProducto}
+                        id          =   {products[item].id}
+                        nProducto   =   {products[item].attributes.name}
+                        pProducto   =   {products[item].attributes.price}
+                        imgProducto =   {products[item].attributes.image_large_url}
                         onClick     =   {añadirItem}
                         onClickRest =   {quitarItem}
                     />       

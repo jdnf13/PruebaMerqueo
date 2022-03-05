@@ -22,7 +22,7 @@ const Carro             =   (nextProps, nextState)  =>  {
         let arrayAux = [];
         //console.log('arrayQuitar', arrayQuitar)
         arrayQuitar.forEach(item => {
-            if(item.id !== parseInt(event.target.id)){
+            if(parseInt(item.id) !== parseInt(event.target.id)){
                 arrayAux.push(item);
             }
         });

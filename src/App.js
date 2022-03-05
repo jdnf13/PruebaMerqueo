@@ -7,8 +7,11 @@ import './css/App.css';
 import LogoBanner from './images/logobanner4.png';
 import Departamentos from './components/Departamentos';
 import Ciudades from './components/Ciudades';
+import ConsumerService from './components/ConsumerService.jsx';
 function App() {
-  
+ // let productos = [];
+ // localStorage.setItem('Productos',JSON.stringify(productos))
+ 
   return (
     <BrowserRouter key="Brows1">
     <div className= "App">
@@ -36,6 +39,7 @@ function App() {
       </Switch>
       <Departamentos></Departamentos>
       <Ciudades></Ciudades>
+      <ConsumerService></ConsumerService>
     </div>    
     </BrowserRouter>
   );

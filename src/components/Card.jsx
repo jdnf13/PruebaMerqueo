@@ -5,8 +5,16 @@ import '../css/App.css';
 //import Tienda from '../components/Tienda';
 
 const Card  =   (props)  =>  {
+    let styleImg={
+        height: "50%",
+        width: "50%",
+        objectFit: "contain",
+        backgroundSize:"cover"
+    }
     let style={
-        width: "18rem",
+        width: "20rem",
+        height: "50rem",
+        maxHeight: "20%",
         background: "#000000",  /* fallback for old browsers */
         background: "-webkit-linear-gradient(to bottom, #434343, #000000)",  /* Chrome 10-25, Safari 5.1-6 */
         background: "linear-gradient(to bottom, #434343, #000000)", 
@@ -14,6 +22,7 @@ const Card  =   (props)  =>  {
         borderRadius: "15px",
         //webkitBorderRadius:"15px",
         padding: "-1px",
+        backgroundSize:"cover"
     }
 
 
@@ -77,7 +86,7 @@ const Card  =   (props)  =>  {
 return(
         <div className="container">
             <div className="card" style={style}>
-                <img className="card-img-top d-block w-100" src={imgProducto} alt={imgProducto}></img>
+                <img className="card-img-top d-block w-100" style={styleImg} src={imgProducto} alt={imgProducto}></img>
                 <div className="card-body">
                     <h5 className="card-title">
                         {nProducto}
