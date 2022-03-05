@@ -7,9 +7,9 @@ h1, h2, h3, h4, h5, h5, p, .navbar, .input {
   }
 /*Estilos de todo el body*/
 .App{
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #bb7c7c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, hsl(122, 87%, 24%), hsl(140, 81%, 24%));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, hsl(122, 87%, 24%), hsl(140, 81%, 24%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
 /*Estilos de la imagen logo*/  
@@ -26,28 +26,31 @@ h1, h2, h3, h4, h5, h5, p, .navbar, .input {
     margin-bottom: 3%;
 }
 .ItemHover{
-    color: white;
+    color: hsl(122, 52%, 90%);
+    background-color: #47434344;
 }
 .ItemHoverInicio{
     font-size: 1.3rem;
-    color: white;
+    color: hsl(120, 56%, 5%);
+    background-color: #47434344;
 }
 .active{
-    color: rgb(223, 166, 126);
+    color: hsl(120, 56%, 5%);
+    background-color: #47434344;
 }
 .ItemHover:hover{
     text-decoration: none;
-    color: white;
+    color: hsl(120, 56%, 5%);
     font-weight: bold;
 }
 .ItemHoverInicio:hover{
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 .active{
     text-decoration: none;
-    color: white;
+    color: rgb(82, 58, 58);
     font-weight: bold;
 }
 /*Estilos del Banner*/

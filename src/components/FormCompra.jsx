@@ -1,10 +1,9 @@
-import React,{Fragment, useState} from 'react';
+import React,{Component, Fragment, useState} from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {NavLink} from 'react-router-dom';
-//import Carro from '../components/Carro';
 import md5 from 'md5';
 import '../css/App.css';
-import Footer from './Footer';
+import Footer from './FooterInicio';
 
 
 const FormCompra  = ()  => {
@@ -147,24 +146,15 @@ const FormCompra  = ()  => {
             }
         }
         if(validacion){
-        alert('¡Información Importante!\n'+'¡' + 'Hola ' +  buyerFullName +'! '  + ' El pedido sera enviado contraentrega, el costo varia de acuerdo al lugar de recidencia, el envío se hara por medio de Servientrega, el numero de guia se te enviara por correo electronico o celular suministrados ' + '\nTu número de pedido es: ' + referenciaPago);
+        alert('¡' + 'Hola ' +  buyerFullName +'! ' + '\nTu número de pedido es: ' + referenciaPago);
         
         let data=    infoClienteEndpiont;
         /////////////////Limpiamos el localStorage////////////////////////
         let CarroDeCompras  =   [];
         localStorage.setItem('articulos',JSON.stringify(CarroDeCompras));                  
-        console.log('data enviada al api', data);   
-        /////////////Metodo para enviar endpoint al API para enviar datos al correo
-        fetch("https://tienda.micafezen.com/api/payu", {
-            method: 'POST',   
-            headers: {
-              Accept: "application/json", "Content-Type": "application/json",
-              Authorization: "token 900ff9a08db741d3a0da3782d3b47dd171b1b65d",
-            },           
-            body:   JSON.stringify(data)}).then(response => response.json()).then(data => {     
-            });
+        console.log('Informacion del Pedido', data);   
         }
-         
+             
     }
 
     
@@ -212,7 +202,7 @@ const FormCompra  = ()  => {
                     <h3 key="TituloFac" >Datos de Facturación</h3>                
                 </div>
                 <div  className="containerForm">
-                    <form  method="post" action="https://checkout.payulatam.com/ppp-web-gateway-payu/">  
+                    <form >  
                     <div key="contenedorInfoParrafo" ><p key="ParrafoInfo" className="ParrafoForm">Los campos con el simbolo (*) son requeridos</p></div>
                         <div  className="form-row">
                         <div  className="form-group col-md-6">
@@ -277,8 +267,8 @@ const FormCompra  = ()  => {
                                 <input key="input8" name="currency" value="COP" type="hidden" className="form-control"></input>
                                 <input key="input9" name="tax" value={0} type="hidden" className="form-control"></input>
                                 <input key="input10" name="taxReturnBase" value = {0} type="hidden" className="form-control"></input>
-                                <input key="input11" name="responseUrl"    type="hidden"  value="https://www.micafezen.com"></input>
-                                <input key="input12" name="confirmationUrl"    type="hidden"  value="https://www.micafezen.com"></input>
+                                <input key="input11" name="responseUrl"    type="hidden"  value="https://merqueo.com/"></input>
+                                <input key="input12" name="confirmationUrl"    type="hidden"  value="https://merqueo.com/"></input>
                                 <input key="input13" name="shippingCountry" value="CO" type="hidden" className="form-control"></input>
                                 <input key="input14" name="signature" value={signature} type="hidden" className="form-control"></input>
 

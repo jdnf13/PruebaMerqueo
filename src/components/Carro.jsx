@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Switch,  Route, NavLink} from 'react-router-dom';
 import FormCompra from '../components/FormCompra';
 import '../css/App.css';
-import Footer from './Footer';
+import Footer from './FooterInicio';
 
 const Carro             =   (nextProps, nextState)  =>  {
     
@@ -16,17 +16,17 @@ const Carro             =   (nextProps, nextState)  =>  {
     let sumatoria=  [];
     
     const eventoBotonQuitar = (event) =>{
-        console.log(event.target.id,arrayCarrito);
+        //console.log(event.target.id,arrayCarrito);
         let arrayLocalStorage = localStorage.getItem('articulos');
         let arrayQuitar = JSON.parse(arrayLocalStorage);
         let arrayAux = [];
-        console.log('arrayQuitar', arrayQuitar)
+        //console.log('arrayQuitar', arrayQuitar)
         arrayQuitar.forEach(item => {
             if(item.id !== parseInt(event.target.id)){
                 arrayAux.push(item);
             }
         });
-        console.log('se quito ', arrayAux);
+        //console.log('se quito ', arrayAux);
         let arrayLimpio = [];
         localStorage.setItem('articulos',JSON.stringify(arrayLimpio)); 
         localStorage.setItem('articulos',JSON.stringify(arrayAux));
@@ -37,7 +37,9 @@ const Carro             =   (nextProps, nextState)  =>  {
         Columnas = [];
         Columna = [];
         Table =[];
+
     if(arrayCarrito !== null){
+        
         let i       =   arrayCarrito.length;
         let item    =   0;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+//Simulamos los datos obtenidos de un API RESTS para la obtención de los departamentos
 const ciudades  =   (props)  =>  {
 let departamentosNull   =   []
 localStorage.setItem('ListaDepartamentos', departamentosNull);

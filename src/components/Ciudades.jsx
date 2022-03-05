@@ -1,5 +1,5 @@
 import React from 'react';
-
+//Simulamos los datos obtenidos de un API RESTS para la obtención de las ciudades
 const Ciudades =  ()  =>   {
 let ciudadesNull    =   [];
 localStorage.setItem('ListaCiudadesCol',JSON.stringify(ciudadesNull));
